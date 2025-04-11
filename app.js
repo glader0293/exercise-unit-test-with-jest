@@ -5,24 +5,28 @@ let oneEuroIs = {
     GBP: 0.87, // british pound
 }
 
-const fromDollarToYen= (dollar) =>{
-    return (currency / oneEuroIs.USD) * oneEuroIs.JPY
+const fromDollarToYen = (dollar) =>{
+    let resultfromDollarToYen = (dollar / oneEuroIs.USD) * oneEuroIs.JPY
+    return parseFloat(resultfromDollarToYen.toFixed(2))
     
 }
 
 const fromEuroToDollar = (euro) =>{
-    return currency * oneEuroIs.USD
+    let resultfromEuroToDollar = euro * oneEuroIs.USD
+    return parseFloat(resultfromEuroToDollar.toFixed(2))
     
 }
 
 const fromYenToPound = (yen) =>{
-    // 1 euro = 1.14942 pounds 1/ 0.87 = 1.14942
-    // 1 euro = 156.5 yen
-    return (yen / oneEuroIs.JPY) * oneEuroIs.GBP
+    let resultfromYenToPound = (yen / oneEuroIs.JPY) * oneEuroIs.GBP
+    return parseFloat(resultfromYenToPound.toFixed(2))
     
 }
 
 console.log(fromYenToPound(1000))
 module.exports = {
-    fromDollarToYen
+    oneEuroIs,
+    fromDollarToYen,
+    fromEuroToDollar,
+    fromYenToPound,
 };
